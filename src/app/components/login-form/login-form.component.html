@@ -1,0 +1,8 @@
+<md-progress-bar *ngIf="progress" mode="indeterminate"></md-progress-bar>
+<div class="container">
+<div class="demo-card-wide mdl-card mdl-shadow--2dp flex">
+<md-input-container><input mdInput type="text" [(ngModel)]="login" placeholder="Nazwa użytkownika"></md-input-container>
+<md-input-container><input mdInput type="password" [(ngModel)]="password" placeholder="Hasło"></md-input-container>
+<button md-raised-button type="submit" (click)="logIn()">Zaloguj Się</button>
+</div>
+</div>
