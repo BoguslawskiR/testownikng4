@@ -1,26 +1,2 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Baza testowników PWr</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" [routerLink]="['/tests']"><md-icon>list_view</md-icon></a>
+	<router-outlet></router-outlet>
 
-        <a class="mdl-navigation__link" style="cursor: pointer" (click)="logout()"><md-icon>power_settings_new</md-icon></a>
-      </nav>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Menu</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" [routerLink]="['/tests']"><md-icon style="margin-right: 15px;">list_view</md-icon>Lista testów</a>
-      <a class="mdl-navigation__link" style="cursor: pointer" (click)="logout()"><md-icon style="margin-right: 15px;">power_settings_new</md-icon>Wyloguj</a>
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content">	<router-outlet></router-outlet></div>
-  </main>
-</div>

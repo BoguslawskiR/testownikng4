@@ -10,8 +10,11 @@ import 'rxjs';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginComponent {
-    private password;
-    private login;
+    private password = '';
+    private login = '';
+    private email = '';
+    private email2 = '';
+    private register = false;
     private progress = false;
     constructor(
         private _ls: LoginService,
@@ -19,7 +22,7 @@ export class LoginComponent {
         private _cus: CurrentUserService
     ){ 
         if(window.localStorage.getItem('token')){
-            this._router.navigate(['tests'])
+            this._router.navigate(['user','tests'])
         }
     }
 
@@ -28,11 +31,21 @@ export class LoginComponent {
         this._ls.login(this.login, this.password).subscribe(res => {
             window.localStorage.setItem('token', res.token);
             this.progress=false;
-            this._router.navigate(['tests']);
+            this._router.navigate(['user','tests']);
         }, e=>{
             console.log(e)
             this.progress=false;
         });
+    }
+
+    registerUser(){
+        this.progress=true;
+        this._ls.register(this.login, this.password, this.email).subscribe(res=>{
+            console.log(res);
+            window.localStorage.setItem('token', res.token);
+            this.progress=false;
+            this._router.navigate(['user','tests']);
+        }, e=>console.log(e));
     }
 
 }

@@ -28,7 +28,7 @@ export class TestListComponent implements OnInit {
     }
 
     navigate(id, path){
-      this._router.navigate(['/tests', id, path])
+      this._router.navigate(['user','tests', id, path])
     }
 
 }

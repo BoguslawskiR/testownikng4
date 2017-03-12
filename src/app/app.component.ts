@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,9 @@ export class AppComponent {
 
   constructor(
     private _router: Router,
+    private _route: ActivatedRoute
   ){
-    
+    this._route.url.subscribe(x=>console.log(x));
   }
 
 

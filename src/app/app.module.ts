@@ -7,7 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
 //components
-import { TestComponent, LearnComponent, LoginComponent, TestListComponent } from './components';
+import { TestComponent, LearnComponent, LoginComponent, TestListComponent, UserComponent } from './components';
  //services
  import { TestsService } from './services/tests.service';
 import { LoginService } from './services/login.service';
@@ -20,7 +20,8 @@ import { CurrentUserService } from './services/current-user.service';
     TestComponent,
     LearnComponent,
     LoginComponent,
-    TestListComponent
+    TestListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
