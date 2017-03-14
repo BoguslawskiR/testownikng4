@@ -3,6 +3,9 @@ import { LoginService } from '../../services/login.service';
 import { CurrentUserService } from '../../services/current-user.service';
 import { Router, ActivatedRoute } from '@angular/router'
 import 'rxjs';
+import 'particles.js';
+
+declare var particlesJS;
 
 @Component({
   selector: 'test',
@@ -24,6 +27,9 @@ export class LoginComponent {
         if(window.localStorage.getItem('token')){
             this._router.navigate(['user','tests'])
         }
+        
+
+       particlesJS.load('particles-js', 'assets/particles.json') 
     }
 
     logIn(){

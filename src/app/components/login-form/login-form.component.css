@@ -18,3 +18,35 @@
 .invalid {
     color: red;
 }
+
+#particles-js {
+  background: cornflowerblue;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form {
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+    z-index: 100;
+    
+}
+
+.bg-form {
+    position: absolute;
+    top: 35vh;
+    left: 35vw;
+    right: 35vw;
+    bottom: 35vh;
+    background: #FAFAFA;
+}
+
+.title {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    padding: 30px 30px 30px 30px;
+    max-height: 75px !important;
+    color: white;
+}
