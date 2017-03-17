@@ -12,6 +12,7 @@ import { TestComponent, LearnComponent, LoginComponent, TestListComponent, UserC
  import { TestsService } from './services/tests.service';
 import { LoginService } from './services/login.service';
 import { CurrentUserService } from './services/current-user.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CurrentUserService } from './services/current-user.service';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
+    AuthService,
     TestsService,
     LoginService,
     CurrentUserService
@@ -38,3 +40,4 @@ import { CurrentUserService } from './services/current-user.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

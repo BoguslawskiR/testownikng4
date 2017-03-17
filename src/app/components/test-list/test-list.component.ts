@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { TestsService } from '../../services/tests.service';
 import { Router } from '@angular/router'
 import { CurrentUserService } from '../../services/current-user.service';
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'test-list',
   templateUrl: './test-list.component.html',
@@ -14,7 +15,8 @@ export class TestListComponent implements OnInit {
     constructor(
       private _ts: TestsService,
       private _router: Router,
-      private _cus: CurrentUserService
+      private _cus: CurrentUserService,
+      private _au: AuthService
     ){
       this._cus.getUser().subscribe(x=>console.log(x))
 
