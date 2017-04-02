@@ -1,11 +1,11 @@
 <md-progress-bar *ngIf="progress" mode="indeterminate"></md-progress-bar>
 
 <div id="particles-js"></div>
-<div class="demo-card-wide mdl-card mdl-shadow--2dp flex form" style="height: auto;">
+<md-card class="z-depth-1 md-card flex form" style="height: auto;">
 <md-input-container style="margin-top: 15px;"><input mdInput type="text" [(ngModel)]="login" placeholder="Nazwa użytkownika" required></md-input-container>
 <md-input-container><input mdInput type="password" [(ngModel)]="password" placeholder="Hasło" required></md-input-container>
 <md-input-container *ngIf="register"><input [class.invalid]="(email != email2)" mdInput type="text" [(ngModel)]="email" placeholder="Adres email" required ></md-input-container>
 <md-input-container *ngIf="register"><input [class.invalid]="(email != email2)" mdInput type="text" [(ngModel)]="email2" placeholder="Powtórz email" required></md-input-container>
 <div><button *ngIf="!register" md-raised-button type="submit" color="warn" style="margin-right: 10px" [disabled]="login.length < 3 || password.length < 3" (click)="logIn()">Zaloguj Się</button><button md-raised-button *ngIf="!register" type="submit" color="primary" (click)="register=true">Zarejestruj się</button><button md-raised-button *ngIf="register" [disabled]="login.length < 3 || password.length < 3 || email.length < 6 || email!=email2" type="submit" color="primary" style="margin-bottom: 20px;" (click)="registerUser()">Zarejestruj się</button></div>
-</div>
-<div class="demo-card-wide mdl-card mdl-shadow--2dp flex bg-form" style="height: 150px; width: 300px;"></div>
+</md-card>
+<div class=" flex bg-form" style="height: 150px; width: 300px;"></div>

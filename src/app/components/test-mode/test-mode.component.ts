@@ -17,6 +17,8 @@ export class TestComponent implements OnInit {
     private questionIterator = 0;
     private correctIterator = 0;
     private correct_val = 0;
+    private time;
+    private startTime;
 
 
     constructor(
@@ -32,7 +34,17 @@ export class TestComponent implements OnInit {
 
             this.getQuestion();
         })
+
+        
+      this.startTime = new Date().getTime();
+      
+      setInterval(x=>this.getTime(), 1000);
     }
+
+    public getTime(){
+    let currentTime = new Date().getTime();
+    this.time = (currentTime-1000*60*60) - this.startTime;
+  }
 
 
 

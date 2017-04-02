@@ -1,28 +1,29 @@
-<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title">
-    <h2 *ngIf="!question?.img_question" class="mdl-card__title-text">{{question?.question}}</h2><img *ngIf="question?.img_question" src="https://testownikpwr.herokuapp.com{{question.img_question}}">
+<md-card class="card">
+  <div>
+    <h2 *ngIf="!question?.img_question">{{question?.question}}</h2><img *ngIf="question?.img_question" src="https://testownikpwr.herokuapp.com{{question.img_question}}">
   </div>
-  <div class="mdl-card__supporting-text">
-    <ul class="demo-list-item mdl-list">
-        <li [class.correct]="checkVal && a.is_correct" [class.checked]="a.checked" [class.incorrect]="a.checked && !a.is_correct && checkVal" *ngFor="let a of question?.answers; let i = index" class="mdl-list__item" (click)="changeVal(i)">
-            <span class="mdl-list__item-primary-content">
+  <div >
+    <md-list>
+        <md-list-item [class.correct]="checkVal && a.is_correct" [class.checked]="a.checked" [class.incorrect]="a.checked && !a.is_correct && checkVal" *ngFor="let a of question?.answers; let i = index" class="mdl-list__item" (click)="changeVal(i)">
+            <span >
                 <span *ngIf="!a.img_answer">{{a.answer}}</span><img *ngIf="a.img_answer" src="https://testownikpwr.herokuapp.com{{a.img_answer}}">
             </span>
-        </li>
-    </ul>
+        </md-list-item>
+    </md-list>
   </div>
 
-</div>
+</md-card>
 
-<div class="demo-card-wide mdl-card mdl-shadow--2dp footer">
+<div class="footer">
 
 
-   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button" (click)="getQuestion()">
+   <button md-button class="button" (click)="getQuestion()">
         Dalej
       </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent button" (click)="check()">
+      <button md-button class="button" (click)="check()">
         Sprawdź
       </button>
 <div class="progress"><span>Pytania opanowane</span><md-progress-bar value="{{reached_val}}"></md-progress-bar></div>
 <div class="progress"><span>Stosunek poprawnych odpowiedzi</span><md-progress-bar value="{{correct_val}}"></md-progress-bar></div>
+<span>Czas sesji:<br> {{time | date: 'HH:mm:ss'}}</span>
 </div>

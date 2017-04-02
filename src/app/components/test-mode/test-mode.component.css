@@ -2,9 +2,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.mdl-card {
-    width: 80vw;
-    margin-left: 10vw;
+.card {
+    width: auto;
+    margin-left: 8vw;
+    margin-right: 8vw;
     margin-top: 50px;
 }
 
